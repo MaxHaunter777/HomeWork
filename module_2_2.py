@@ -9,11 +9,7 @@ second = int(input('Введите второе число: '))
 third = int(input('Введите третье число: '))
 if first == second == third:
     print(3, '(числа равны между собой)')
-elif first == second:
-    print(2, '(2 из 3 введённых чисел равны)')
-elif first == third:
-    print(2, '(2 из 3 введённых чисел равны)')
-elif second == third:
+elif first == second or first == third or  second == third:
     print(2, '(2 из 3 введённых чисел равны)')
 else:
     print(0, '(равных чисел среди 3-х вообще нет)')
