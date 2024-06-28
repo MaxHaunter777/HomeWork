@@ -10,8 +10,8 @@ my_list = [42, 69, 322, 13, 0, 99, -5, 9, 8, 7, -6, 5]
 d = len(my_list)
 n = 0
 while d > 0 and my_list[n] >= 0:
-    d = d - 1
     f = my_list[n]
     n = n + 1
     if f > 0:
         print(f)
+        d = d - 1
