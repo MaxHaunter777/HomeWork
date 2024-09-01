@@ -1,0 +1,3 @@
+
+Название: Potato, Вес: 50.5, Категория: Vegetables
+Название: Spaghetti, Вес: 3.4, Категория: Groceries
