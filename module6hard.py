@@ -158,7 +158,7 @@ class Cube(Figure):
     def get_volume(self):
         return f'Обьём куба: {self.__sides[0] ** 3}'
 
-circle1 = Circle((200, 200, 100), 11) # (Цвет, стороны)
+circle1 = Circle((200, 200, 100), 10) # (Цвет, стороны)
 cube1 = Cube((222, 35, 130), 6)
 triangle1 = Triangle((115, 22, 11), 7, 4, 5)
 
