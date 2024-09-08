@@ -28,10 +28,16 @@ print(apply_all_func([6, 20, 15, 9], len, sum, sorted))
 def apply_all_func(int_list, *functions):
     results = {}
 
-    for i in functions:
-        results[i.__name__] = i(int_list)
-    return results
+    for i in int_list:
+        if isinstance(i, (int, float)):
+            try:
+                for j in functions:
+                    results[j.__name__] = j(int_list)
+            except TypeError:
+                print(f'некорректный тип данных в функцие - {j.__name__}')
+        return results
 
 print(apply_all_func([6, 20, 15, 9], max, min))
-print(apply_all_func([6, 20, 15, 9], len, sum, sorted))
+print(apply_all_func([6, 20, 15, 9.5], len, sum, sorted))
+print(apply_all_func([6, 20, 15, '9.5'], len, sum, sorted))
 
