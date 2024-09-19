@@ -12,7 +12,7 @@ def is_prime(func):
                 else:
                     return "Простое"
         else:
-            return print("Число не простое и не состовное")
+            return "Число не простое и не состовное"
     return wrapper
 
 
