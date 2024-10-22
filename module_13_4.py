@@ -35,7 +35,7 @@ async def  send_calories(message, state):
     await state.update_data(third=message.text)
     data = await state.get_data()
     calorii = 10 * int(data['third']) + 6.25 * int(data['second']) - 5 * int(data['first']) + 5
-    await message.answer(f'У вас {calorii} калорий')
+    await message.answer(f'Вша норма калорий: {calorii}')
     await state.finish()
 
 @dp.message_handler(commands='start')
