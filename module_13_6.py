@@ -66,12 +66,10 @@ async def  send_calories(message, state):
 
 @dp.message_handler(commands='start')
 async def start_message(message):
-    print('Привет! Я бот помогающий твоему здоровью.')
     await message.answer('Привет! Я бот помогающий твоему здоровью.', reply_markup=kb)
 
 @dp.message_handler()
 async  def all_message(message):
-    print('Введите команду /start, чтобы начать общение.')
     await message.answer('Введите команду /start, чтобы начать общение.')
 
 if __name__ == '__main__':
