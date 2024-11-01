@@ -30,7 +30,7 @@ n = i[::3]
 for i in n:
     cursor.execute('DELETE from users WHERE id = ?', (f'{i}',))
 
-#Сделайте выборку всех записей при помощи fetchall()
+#Сделайте выборку всех записей при помощи fetchall(), где возраст не равен 60 и выведите их в консоль
 cursor.execute('SELECT * FROM Users')
 cursor.execute('SELECT username, email, age, balance from users WHERE age != ?', (60,))
 users = cursor.fetchall()
