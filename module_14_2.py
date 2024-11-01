@@ -2,7 +2,7 @@
 
 import sqlite3
 
-connection = sqlite3.connect('not_telegram.db')
+connection = sqlite3.connect('not_telegram2.db')
 cursor = connection.cursor()
 
 #Создайте таблицу Users
@@ -17,7 +17,7 @@ balance INTEGER NOT NULL
 ''')
 
 #Заполните её 10 записями:
-'''for i in range(10):
+for i in range(10):
     cursor.execute('INSERT INTO Users (username, email, age, balance) VALUES (?, ?, ?, ?)', 
                                         (f'User{i+1}', f'example{i+1}@gmail.com', f'{(i+1)*10}', '1000'))
 
@@ -30,7 +30,7 @@ for i in range(10):
 i = range(1, 11)
 n = i[::3]
 for i in n:
-    cursor.execute('DELETE from users WHERE id = ?', (f'{i}',))'''
+    cursor.execute('DELETE from users WHERE id = ?', (f'{i}',))
 
 #Сделайте выборку всех записей при помощи fetchall(), где возраст не равен 60 и выведите их в консоль
 cursor.execute('SELECT * FROM Users')
