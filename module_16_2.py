@@ -22,7 +22,7 @@ async def admin():
 #    Ограничено по значению: больше или равно 1 и меньше либо равно 100.
 #    Описание - 'Enter User ID'
 @app.get("/user/{user_id}")
-async def get_user(user_id: Annotated[int, Path(ge=1, le=100, title="User ID", description="Enter User ID")]):
+async def get_user(user_id: Annotated[int, Path(ge=1, le=100, title="User ID", description="Enter User ID", example="1")]):
     return {f"Вы вошли как пользователь №{user_id}"}
 
 # Создайте маршрут к страницам пользователей передавая данные в адресной строке - "/user".
@@ -33,6 +33,6 @@ async def get_user(user_id: Annotated[int, Path(ge=1, le=100, title="User ID", d
 #   Описания для username и age - 'Enter username' и 'Enter age' соответственно.
 @app.get("/user/{username}/{age}")
 async def get_user(
-        username: Annotated[str, Path(min_length=3, max_length=20, description="Enter username")],
-        age: Annotated[int, Path(ge=18, le=120, description="Enter age")]):
+        username: Annotated[str, Path(min_length=3, max_length=20, description="Enter username", example="UrbanUser")],
+        age: Annotated[int, Path(ge=18, le=120, description="Enter age", example="24")]):
     return {f'Информация о пользователе. Имя: {username}, Возраст: {age}'}
