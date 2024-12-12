@@ -1,7 +1,7 @@
 from app2.backend.db import Base
 from sqlalchemy import Column, ForeignKey, Integer, String, Boolean, Float, ForeignKey
 from sqlalchemy.orm import relationship
-from app2.models.task import *
+from app2.models import *
 
 class User(Base):
     __tablename__ = 'users'
